@@ -102,7 +102,7 @@ enum nbft_transport_types {
 };
 
 /*
- * HFI DECRIPTOR (Figure 11)
+ * HFI DESCRIPTOR (Figure 11)
  */
 struct __attribute__((__packed__)) nbft_hfi_desc {
 	__u8 structure_id;
@@ -115,6 +115,15 @@ struct __attribute__((__packed__)) nbft_hfi_desc {
 };
 
 #define HFIFLAG_VALID		0x01
+
+enum  {
+    NBFT_IPORIGIN_OTHER = 0,
+    NBFT_IPORIGIN_MANUAL,
+    NBFT_IPORIGIN_WELLKNOWN,
+    NBFT_IPORIGIN_DHCP,
+    NBFT_IPORIGIN_RADV,
+    NBFT_IPORIGIN_UNCHANGED = 16,
+};
 
 /*
  * HFI TRANSPORT INFO DESCRIPTOR (Figure 13)
